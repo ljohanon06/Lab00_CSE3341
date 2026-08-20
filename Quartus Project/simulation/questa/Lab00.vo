@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition"
 
-// DATE "08/19/2026 14:48:54"
+// DATE "08/20/2026 15:28:48"
 
 // 
 // Device: Altera 10M50DAF484C7G Package FBGA484
@@ -48,14 +48,14 @@ output 	NOR_OUT;
 output 	XNOR_OUT;
 
 // Design Ports Information
-// AND_OUT	=>  Location: PIN_W3,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// OR_OUT	=>  Location: PIN_U7,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// XOR_OUT	=>  Location: PIN_AA2,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// NAND_OUT	=>  Location: PIN_W4,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// NOR_OUT	=>  Location: PIN_U6,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// XNOR_OUT	=>  Location: PIN_AA1,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// SW0	=>  Location: PIN_V7,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// SW1	=>  Location: PIN_Y6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// AND_OUT	=>  Location: PIN_A8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// OR_OUT	=>  Location: PIN_A9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// XOR_OUT	=>  Location: PIN_A10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NAND_OUT	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NOR_OUT	=>  Location: PIN_D13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// XNOR_OUT	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW0	=>  Location: PIN_C10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW1	=>  Location: PIN_C11,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 wire gnd;
@@ -79,8 +79,8 @@ wire \XOR_OUT~output_o ;
 wire \NAND_OUT~output_o ;
 wire \NOR_OUT~output_o ;
 wire \XNOR_OUT~output_o ;
-wire \SW0~input_o ;
 wire \SW1~input_o ;
+wire \SW0~input_o ;
 wire \AND_OUT~0_combout ;
 wire \OR_OUT~0_combout ;
 wire \XOR_OUT~0_combout ;
@@ -91,7 +91,7 @@ hard_block auto_generated_inst(
 	.devclrn(devclrn),
 	.devoe(devoe));
 
-// Location: LCCOMB_X44_Y52_N16
+// Location: LCCOMB_X44_Y41_N8
 fiftyfivenm_lcell_comb \~QUARTUS_CREATED_GND~I (
 // Equation(s):
 // \~QUARTUS_CREATED_GND~I_combout  = GND
@@ -108,7 +108,7 @@ defparam \~QUARTUS_CREATED_GND~I .lut_mask = 16'h0000;
 defparam \~QUARTUS_CREATED_GND~I .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: IOOBUF_X18_Y0_N9
+// Location: IOOBUF_X46_Y54_N2
 fiftyfivenm_io_obuf \AND_OUT~output (
 	.i(\AND_OUT~0_combout ),
 	.oe(vcc),
@@ -121,7 +121,7 @@ defparam \AND_OUT~output .bus_hold = "false";
 defparam \AND_OUT~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X16_Y0_N2
+// Location: IOOBUF_X46_Y54_N23
 fiftyfivenm_io_obuf \OR_OUT~output (
 	.i(\OR_OUT~0_combout ),
 	.oe(vcc),
@@ -134,7 +134,7 @@ defparam \OR_OUT~output .bus_hold = "false";
 defparam \OR_OUT~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X18_Y0_N23
+// Location: IOOBUF_X51_Y54_N16
 fiftyfivenm_io_obuf \XOR_OUT~output (
 	.i(\XOR_OUT~0_combout ),
 	.oe(vcc),
@@ -147,7 +147,7 @@ defparam \XOR_OUT~output .bus_hold = "false";
 defparam \XOR_OUT~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X18_Y0_N16
+// Location: IOOBUF_X46_Y54_N9
 fiftyfivenm_io_obuf \NAND_OUT~output (
 	.i(!\AND_OUT~0_combout ),
 	.oe(vcc),
@@ -160,7 +160,7 @@ defparam \NAND_OUT~output .bus_hold = "false";
 defparam \NAND_OUT~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X16_Y0_N9
+// Location: IOOBUF_X56_Y54_N30
 fiftyfivenm_io_obuf \NOR_OUT~output (
 	.i(!\OR_OUT~0_combout ),
 	.oe(vcc),
@@ -173,7 +173,7 @@ defparam \NOR_OUT~output .bus_hold = "false";
 defparam \NOR_OUT~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X18_Y0_N30
+// Location: IOOBUF_X58_Y54_N23
 fiftyfivenm_io_obuf \XNOR_OUT~output (
 	.i(!\XOR_OUT~0_combout ),
 	.oe(vcc),
@@ -186,19 +186,7 @@ defparam \XNOR_OUT~output .bus_hold = "false";
 defparam \XNOR_OUT~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOIBUF_X20_Y0_N22
-fiftyfivenm_io_ibuf \SW0~input (
-	.i(SW0),
-	.ibar(gnd),
-	.nsleep(vcc),
-	.o(\SW0~input_o ));
-// synopsys translate_off
-defparam \SW0~input .bus_hold = "false";
-defparam \SW0~input .listen_to_nsleep_signal = "false";
-defparam \SW0~input .simulate_z_as = "z";
-// synopsys translate_on
-
-// Location: IOIBUF_X20_Y0_N29
+// Location: IOIBUF_X51_Y54_N22
 fiftyfivenm_io_ibuf \SW1~input (
 	.i(SW1),
 	.ibar(gnd),
@@ -210,15 +198,27 @@ defparam \SW1~input .listen_to_nsleep_signal = "false";
 defparam \SW1~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: LCCOMB_X19_Y1_N0
+// Location: IOIBUF_X51_Y54_N29
+fiftyfivenm_io_ibuf \SW0~input (
+	.i(SW0),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\SW0~input_o ));
+// synopsys translate_off
+defparam \SW0~input .bus_hold = "false";
+defparam \SW0~input .listen_to_nsleep_signal = "false";
+defparam \SW0~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X51_Y53_N24
 fiftyfivenm_lcell_comb \AND_OUT~0 (
 // Equation(s):
-// \AND_OUT~0_combout  = (\SW0~input_o  & \SW1~input_o )
+// \AND_OUT~0_combout  = (\SW1~input_o  & \SW0~input_o )
 
 	.dataa(gnd),
 	.datab(gnd),
-	.datac(\SW0~input_o ),
-	.datad(\SW1~input_o ),
+	.datac(\SW1~input_o ),
+	.datad(\SW0~input_o ),
 	.cin(gnd),
 	.combout(\AND_OUT~0_combout ),
 	.cout());
@@ -227,15 +227,15 @@ defparam \AND_OUT~0 .lut_mask = 16'hF000;
 defparam \AND_OUT~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X19_Y1_N2
+// Location: LCCOMB_X51_Y53_N18
 fiftyfivenm_lcell_comb \OR_OUT~0 (
 // Equation(s):
-// \OR_OUT~0_combout  = (\SW0~input_o ) # (\SW1~input_o )
+// \OR_OUT~0_combout  = (\SW1~input_o ) # (\SW0~input_o )
 
 	.dataa(gnd),
 	.datab(gnd),
-	.datac(\SW0~input_o ),
-	.datad(\SW1~input_o ),
+	.datac(\SW1~input_o ),
+	.datad(\SW0~input_o ),
 	.cin(gnd),
 	.combout(\OR_OUT~0_combout ),
 	.cout());
@@ -244,15 +244,15 @@ defparam \OR_OUT~0 .lut_mask = 16'hFFF0;
 defparam \OR_OUT~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X19_Y1_N20
+// Location: LCCOMB_X51_Y53_N28
 fiftyfivenm_lcell_comb \XOR_OUT~0 (
 // Equation(s):
-// \XOR_OUT~0_combout  = \SW0~input_o  $ (\SW1~input_o )
+// \XOR_OUT~0_combout  = \SW1~input_o  $ (\SW0~input_o )
 
 	.dataa(gnd),
 	.datab(gnd),
-	.datac(\SW0~input_o ),
-	.datad(\SW1~input_o ),
+	.datac(\SW1~input_o ),
+	.datad(\SW0~input_o ),
 	.cin(gnd),
 	.combout(\XOR_OUT~0_combout ),
 	.cout());
