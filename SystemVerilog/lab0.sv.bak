@@ -11,12 +11,5 @@ module lab0 (
 
     // TODO:
     //Build AND, OR, XOR, NAND, NOR logic operations using SW0 and SW1 as inputs.
-	 
-	 assign AND_OUT = SW0 & SW1;
-	 assign OR_OUT = SW0 | SW1;
-	 assign XOR_OUT = SW0 ^ SW1;
-	 assign NAND_OUT = ~(SW0 & SW1);
-	 assign NOR_OUT = ~(SW0 | SW1);
-	 assign XNOR_OUT = ~(SW0 ^ SW1);
 
 endmodule

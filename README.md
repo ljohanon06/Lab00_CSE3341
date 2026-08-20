@@ -1,5 +1,12 @@
 # Lab 00 — Git/GitHub + Quartus & Questa Setup
 
+
+Name: Levi Johanon
+
+Student ID: 1002187310
+
+Date: 08/20/2026
+
 ## Objective
 
 The purpose of this lab is to verify that your development environment, including GitHub, Quartus, and Questa, is properly configured for the course.
