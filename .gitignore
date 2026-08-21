@@ -1,0 +1,20 @@
+# Quartus generated files
+db/
+incremental_db/
+output_files/
+*.rpt
+*.summary
+*.qws
+*.sof
+*.pof
+*.jdi
+
+# Questa generated files
+work/
+transcript
+vsim.wlf
+*.wlf
+
+# Operating system files
+.DS_Store
+Thumbs.db
