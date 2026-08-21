@@ -12,30 +12,69 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# do Lab00_run_msim_gate_verilog.do
-# if {[file exists gate_work]} {
-# 	vdel -lib gate_work -all
+# do Lab00_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
 # }
-# vlib gate_work
-# vmap work gate_work
+# vlib rtl_work
+# vmap work rtl_work
 # Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
-# vmap work gate_work 
+# vmap work rtl_work 
 # ** Note: (vmap-220) '/home/levijohanon/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
 # Copying /home/levijohanon/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog  -work work +incdir+. {Lab00.vo}
+# vlog -sv -work work +incdir+/home/levijohanon/School/Fall26/CSE3341/Lab00/SystemVerilog {/home/levijohanon/School/Fall26/CSE3341/Lab00/SystemVerilog/lab0.sv}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 15:02:07 on Aug 19,2026
-# vlog -reportprogress 300 -work work "+incdir+." Lab00.vo 
+# Start time: 09:48:36 on Aug 21,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/levijohanon/School/Fall26/CSE3341/Lab00/SystemVerilog" /home/levijohanon/School/Fall26/CSE3341/Lab00/SystemVerilog/lab0.sv 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module lab0
-# -- Compiling module hard_block
 # 
 # Top level modules:
 # 	lab0
-# End time: 15:02:07 on Aug 19,2026, Elapsed time: 0:00:00
+# End time: 09:48:36 on Aug 21,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
+# vlog -sv -work work +incdir+/home/levijohanon/School/Fall26/CSE3341/Lab00/Quartus\ Project/../Simulation {/home/levijohanon/School/Fall26/CSE3341/Lab00/Quartus Project/../Simulation/lab0_tb.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 09:48:36 on Aug 21,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/levijohanon/School/Fall26/CSE3341/Lab00/Quartus Project/../Simulation" /home/levijohanon/School/Fall26/CSE3341/Lab00/Quartus Project/../Simulation/lab0_tb.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module lab0_tb
+# 
+# Top level modules:
+# 	lab0_tb
+# End time: 09:48:36 on Aug 21,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  lab0_tb
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" lab0_tb 
+# Start time: 09:48:36 on Aug 21,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.lab0_tb(fast)
+# Loading work.lab0(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# SW0 SW1 | AND OR XOR NAND NOR XNOR
+# --------------------------------
+#  0   0  |  0   0   0    1    1    1
+#  0   1  |  0   1   1    1    0    0
+#  1   0  |  0   1   1    1    0    0
+#  1   1  |  1   1   0    0    0    1
+# ** Note: $stop    : /home/levijohanon/School/Fall26/CSE3341/Lab00/Quartus Project/../Simulation/lab0_tb.sv(60)
+#    Time: 40 ns  Iteration: 0  Instance: /lab0_tb
+# Break in Module lab0_tb at /home/levijohanon/School/Fall26/CSE3341/Lab00/Quartus Project/../Simulation/lab0_tb.sv line 60
 # 
 # stdin: <EOF>
+# Causality operation skipped due to absence of debug database file
